@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://biv0eejito1q8"]
+
+[ext_resource type="Script" uid="uid://dckhaiqn8s42d" path="res://Scenes/scene.gd" id="1_3bdrj"]
+[ext_resource type="Texture2D" uid="uid://p3ls8qiwix04" path="res://Sprites/black_axes.svg" id="1_lrus4"]
+[ext_resource type="Texture2D" uid="uid://cn05h7ey1n0uq" path="res://Sprites/NES - Duck Hunt - Backgrounds - Backgrounds (1).png" id="2_8t5iv"]
+[ext_resource type="FontFile" uid="uid://bel864o7kh0r0" path="res://Fonts/nintendo-nes-font.ttf" id="4_8t5iv"]
+[ext_resource type="Script" uid="uid://c2w5ytklvrggy" path="res://Scenes/score.gd" id="5_yp48q"]
+[ext_resource type="PackedScene" uid="uid://brl7vxee6ypdk" path="res://dog.tscn" id="6_3bdrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrus4"]
+size = Vector2(20, 660)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8t5iv"]
+size = Vector2(705, 19)
+
+[node name="Scene" type="Node2D" unique_id=104880690]
+script = ExtResource("1_3bdrj")
+
+[node name="BlackAxes" type="Sprite2D" parent="." unique_id=1526233430]
+position = Vector2(576, 386.00003)
+scale = Vector2(3.0703127, 3.0703127)
+texture = ExtResource("1_lrus4")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=96636009]
+position = Vector2(573.99994, 322)
+scale = Vector2(2.6937501, 2.69375)
+texture = ExtResource("2_8t5iv")
+region_enabled = true
+region_rect = Rect2(0, 0, 250, 240)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=795325967]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=289274227]
+position = Vector2(228, 322)
+shape = SubResource("RectangleShape2D_lrus4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1045931888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1913757383]
+position = Vector2(921, 323)
+shape = SubResource("RectangleShape2D_lrus4")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1312953065]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=253544929]
+position = Vector2(574.5, -0.5)
+shape = SubResource("RectangleShape2D_8t5iv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1882554199]
+position = Vector2(573, 647)
+shape = SubResource("RectangleShape2D_8t5iv")
+
+[node name="Label" type="Label" parent="." unique_id=74465258]
+offset_left = 777.0
+offset_top = 559.0
+offset_right = 857.0
+offset_bottom = 582.0
+theme_override_fonts/font = ExtResource("4_8t5iv")
+theme_override_font_sizes/font_size = 21
+text = "SCORE"
+script = ExtResource("5_yp48q")
+
+[node name="Dog" parent="." unique_id=1894355677 instance=ExtResource("6_3bdrj")]
+position = Vector2(578, 340.00003)
+scale = Vector2(3, 3)
