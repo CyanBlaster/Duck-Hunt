@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://bu7ddqhulpfqj"]
 
+[ext_resource type="Script" uid="uid://bnsbors7337c1" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://djv2uoktonvl5" path="res://Sounds/Duck Hunt SFX (13).wav" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://c3enllv5hh7r7" path="res://Sprites/white.jpg" id="2_vgqql"]
+[ext_resource type="Script" uid="uid://djxmkgbaxm832" path="res://Scripts/shot.gd" id="3_6t5aa"]
+
 [node name="player" type="Node2D" unique_id=27259514]
+script = ExtResource("1_v0iea")
+
+[node name="boomy boom" type="Sprite2D" parent="." unique_id=125833309]
+position = Vector2(575, 333)
+scale = Vector2(1.5951086, 0.5061162)
+texture = ExtResource("2_vgqql")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=968394352]
+stream = ExtResource("2_cvnsp")
+script = ExtResource("3_6t5aa")

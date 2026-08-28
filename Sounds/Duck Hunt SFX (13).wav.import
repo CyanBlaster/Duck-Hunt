@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djv2uoktonvl5"
+path="res://.godot/imported/Duck Hunt SFX (13).wav-d86a7be3b8177b0903f0cec419b3fa01.sample"
+
+[deps]
+
+source_file="res://Sounds/Duck Hunt SFX (13).wav"
+dest_files=["res://.godot/imported/Duck Hunt SFX (13).wav-d86a7be3b8177b0903f0cec419b3fa01.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

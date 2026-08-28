@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvg6x4tragdj8"]
+
+[ext_resource type="FontFile" uid="uid://bel864o7kh0r0" path="res://Fonts/nintendo-nes-font.ttf" id="1_ye2uk"]
+[ext_resource type="Script" uid="uid://k703sbqq66xb" path="res://Scripts/timer.gd" id="2_o6fnk"]
+
+[node name="Timer" type="Node2D" unique_id=1039264799]
+
+[node name="Label" type="Label" parent="." unique_id=1556608479]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_ye2uk")
+text = "Timer:"
+script = ExtResource("2_o6fnk")

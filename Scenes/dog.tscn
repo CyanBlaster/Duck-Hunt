@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://brl7vxee6ypdk"]
 
 [ext_resource type="Texture2D" uid="uid://d0hple2fe4tok" path="res://Sprites/NES - Duck Hunt - Characters - The Dog (1).png" id="1_c5eso"]
-[ext_resource type="Script" uid="uid://c7wt4tqqduqvb" path="res://dog.gd" id="1_kb3ao"]
+[ext_resource type="Script" uid="uid://c7wt4tqqduqvb" path="res://Scripts/dog.gd" id="1_kb3ao"]
+[ext_resource type="AudioStream" uid="uid://cdb2wp4dl3q7s" path="res://Sounds/Duck Hunt SFX (9).wav" id="3_bno1h"]
+[ext_resource type="AudioStream" uid="uid://bsafwyhir70er" path="res://Sounds/Duck Hunt SFX (11).wav" id="4_6yb15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb3ao"]
 size = Vector2(42, 35)
@@ -19,6 +21,36 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Rect2(0, 250, 45, 50)]
+}
+
+[sub_resource type="Animation" id="Animation_kb3ao"]
+resource_name = "Got_Three_Ducks"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(115, 240, 60, 60)]
+}
+
+[sub_resource type="Animation" id="Animation_6vfhn"]
+resource_name = "Got_Two_Ducks"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(50, 250, 60, 50)]
 }
 
 [sub_resource type="Animation" id="Animation_ngebd"]
@@ -55,13 +87,17 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6vfhn"]
 _data = {
 &"Got_A_Duck": SubResource("Animation_ptela"),
+&"Got_Three_Ducks": SubResource("Animation_kb3ao"),
+&"Got_Two_Ducks": SubResource("Animation_6vfhn"),
 &"Lmfao": SubResource("Animation_ngebd"),
 &"RESET": SubResource("Animation_jurjn")
 }
 
-[node name="Dog" type="CharacterBody2D" unique_id=1894355677 node_paths=PackedStringArray("animator")]
+[node name="Dog" type="CharacterBody2D" unique_id=1894355677 node_paths=PackedStringArray("animator", "catch", "laugh")]
 script = ExtResource("1_kb3ao")
 animator = NodePath("AnimationPlayer")
+catch = NodePath("Catch")
+laugh = NodePath("Laugh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1319248544]
 position = Vector2(0, 6.5)
@@ -75,3 +111,9 @@ region_rect = Rect2(0, 250, 45, 50)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1861243810]
 libraries/ = SubResource("AnimationLibrary_6vfhn")
+
+[node name="Catch" type="AudioStreamPlayer" parent="." unique_id=91701089]
+stream = ExtResource("3_bno1h")
+
+[node name="Laugh" type="AudioStreamPlayer" parent="." unique_id=974848732]
+stream = ExtResource("4_6yb15")
