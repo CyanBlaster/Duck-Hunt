@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://xp66t1snulvo"]
+
+[ext_resource type="Texture2D" uid="uid://cn05h7ey1n0uq" path="res://Sprites/NES - Duck Hunt - Backgrounds - Backgrounds (1).png" id="1_05l2w"]
+[ext_resource type="Texture2D" uid="uid://bx582r77slhim" path="res://Sprites/duckhunt_en.webp" id="2_hafda"]
+[ext_resource type="FontFile" uid="uid://bel864o7kh0r0" path="res://Fonts/nintendo-nes-font.ttf" id="3_tpml5"]
+[ext_resource type="Script" uid="uid://w0e2n8dyh2yo" path="res://button.gd" id="4_jqemp"]
+
+[node name="Title Screen" type="Node2D" unique_id=1627484243]
+
+[node name="NesDuckHuntBackgroundsBackgrounds(1)" type="Sprite2D" parent="." unique_id=2031229459]
+position = Vector2(1766, 991.00006)
+scale = Vector2(4.6093755, 4.6093755)
+texture = ExtResource("1_05l2w")
+
+[node name="DuckhuntEn" type="Sprite2D" parent="." unique_id=721045703]
+position = Vector2(583, 251)
+texture = ExtResource("2_hafda")
+
+[node name="Button" type="Button" parent="." unique_id=1874782849]
+offset_left = 481.0
+offset_top = 428.0
+offset_right = 681.0
+offset_bottom = 484.0
+theme_override_fonts/font = ExtResource("3_tpml5")
+theme_override_font_sizes/font_size = 48
+text = "PLAY"
+script = ExtResource("4_jqemp")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
